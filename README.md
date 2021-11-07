@@ -3,7 +3,7 @@
 ### Efficient yet simple leak detector for your c project
 
 ## What is a memory leak
-In computer science, a memory leak is a type of resource leak that occurs when a computer program incorrectly manages memory allocations[1] in a way that memory which is no longer needed is not released. A memory leak may also happen when an object is stored in memory but cannot be accessed by the running code.[2] A memory leak has symptoms similar to a number of other problems and generally can only be diagnosed by a programmer with access to the program's source code.
+In computer science, a memory leak is a type of resource leak that occurs when a computer program incorrectly manages [memory allocations](https://en.wikipedia.org/wiki/Memory_management#ALLOCATION) in a way that memory which is no longer needed is not released. A memory leak may also happen when an object is stored in memory but cannot be accessed by the running code. A memory leak has symptoms similar to a number of other problems and generally can only be diagnosed by a programmer with access to the program's source code.
 
 * more about [memory leaks](https://en.wikipedia.org/wiki/Memory_leak)
 ## How to use the leak hunter
@@ -24,11 +24,11 @@ int     main()
 ```
 
 #### • You must include `leak_hunter.h` into your project's header file or your .c file in our case we asume the file test.c is our project:
-	- `#include "leak_hunter.h"`
+	`#include "leak_hunter.h"`
 #### • Then add the following line at the start of your main function:
-	- `atexit(leak_report);`
+	`atexit(leak_report);`
 
-Now the test code should look like the code below:
+* Now the test code should look like the code below:
 
 ```c
 #include <stdlib.h>
@@ -46,7 +46,7 @@ int     main()
 }
 ```
 
-In this case we should get the following output on the file `leak.log` (you can change the path the name and extension related to the file in `leak_hunter.h line:9`)
+* In this case we should get the following output on the file `leak.log` (you can change the path the name and extension related to the file in `leak_hunter.h line:9`)
 
 ```log
 ┌─────────┤ LEAKS LOG ├─────────┐
@@ -72,13 +72,13 @@ In this case we should get the following output on the file `leak.log` (you can 
 
 The log contains
 • summary fo the
-	- Total leaks found.\n
-	- Total leaks size(bytes).\n
+	* Total leaks found.  
+	* Total leaks size(bytes).  
 • each leak details
-	- Address\n
-	- Size\n
-	- File\n
-	- Line\n
+	* Address
+	* Size  
+	* File  
+	* Line  
 
 • after unallocate the reserved memory using the `free()` function.
 
@@ -127,7 +127,7 @@ At the end of the program, we can get the unallocated memory references from the
 
 The line `atexit(leak_report)` registers the `leak_report()` function to be called at the end of the program and this function writes the memory leak summary in to the `leak.log` file. you can also use `#pragma` exit dirctive instead of `atexit()`.
 
-### l3az
+#### l3az
 
 Big thanks to [mamali](https://profile.intra.42.fr/users/mamali) & [hfadyl](https://profile.intra.42.fr/users/hfadyl) for all the emotional support
 
