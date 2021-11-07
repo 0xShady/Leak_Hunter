@@ -36,7 +36,7 @@ void	print_mem_data()
 	}
 }
 
-void	fill_data()
+void	leak_report()
 {
 	t_list	*tmp;
 	FILE	*log;
@@ -59,17 +59,23 @@ void	fill_data()
 		fprintf(log, "│ Total leaks size: %11d │\n", leaks_size);
 		fprintf(log, "├───────────────────────────────┤\n");
 		tmp = mem_data;
-		while (tmp)
+		if (tmp)
 		{
-			fprintf(log, "│ address: %20p │\n", tmp->address);
-			fprintf(log, "│ size (bytes): %15zu │\n", tmp->size);
-			fprintf(log, "│ file: %23s │\n", tmp->file);
-			fprintf(log, "│ line: %23zu │\n", tmp->line);
-			if (tmp->next)
-				fprintf(log, "├───────────────────────────────┤\n");
-			tmp = tmp->next;
+			while (tmp)
+			{
+				fprintf(log, "│ address: %20p │\n", tmp->address);
+				fprintf(log, "│ size (bytes): %15zu │\n", tmp->size);
+				fprintf(log, "│ file: %23s │\n", tmp->file);
+				fprintf(log, "│ line: %23zu │\n", tmp->line);
+				if (tmp->next)
+					fprintf(log, "├───────────────────────────────┤\n");
+				tmp = tmp->next;
+			}
+			fprintf(log, "└───────────────────────────────┘");
 		}
-		fprintf(log, "└───────────────────────────────┘");
+		else
+			fprintf(log, "│   your code is leaks free!!   │\n");
+			fprintf(log, "└───────────────────────────────┘");
 		fclose(log);
 	}
 }

@@ -6,7 +6,7 @@
 # include <string.h>
 # include <unistd.h>
 
-# define OUTPUT_FILE_NAME	"leak_log.txt"
+# define OUTPUT_FILE_NAME	"leak.log"
 # define malloc(size)		xmalloc(size, __FILE__, __LINE__)
 # define free(mem_ref)		xfree(mem_ref)
 
@@ -29,6 +29,6 @@ void			delete_node(t_list** head, void *key);
 void			*xmalloc(size_t size, char *file, size_t line);
 void			xfree(void *mem_ref);
 void			print_mem_data();
-void			fill_data();
+void			leak_report();
 
 #endif /*LEAK_HUNTER_H*/
