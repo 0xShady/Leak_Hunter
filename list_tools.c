@@ -3,7 +3,7 @@
 #undef	malloc
 #undef 	free
 
-t_list	*ft_lstlast(t_list *lst)
+t_list	*lstlast(t_list *lst)
 {
 	if (!lst)
 		return (lst);
@@ -12,16 +12,16 @@ t_list	*ft_lstlast(t_list *lst)
 	return (lst);
 }
 
-void	ft_lstadd_back(t_list **alst, t_list *new)
+void	lstadd_back(t_list **alst, t_list *new)
 {
 	new->next = NULL;
 	if (!(*alst))
 		*alst = new;
 	else
-		ft_lstlast(*alst)->next = new;
+		lstlast(*alst)->next = new;
 }
 
-t_list  *ft_lstnew(void *address, size_t size, size_t line, char *file)
+t_list  *create_node(void *address, size_t size, size_t line, char *file)
 {
 	t_list	*new;
 
