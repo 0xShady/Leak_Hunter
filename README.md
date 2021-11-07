@@ -1,8 +1,8 @@
 # Leak_Hunter
 
-# What is a memory leak
+## What is a memory leak
 ## How to use the leak hunter
-let's asume we want to track the leaked blocks on the file leak.c
+#### let's asume we want to track the leaked blocks on the file leak.c
 
 ```c
 #include <stdlib.h>
@@ -18,10 +18,10 @@ int     main()
 }
 ```
 
-• You must include `leak_hunter.h` into your project's header file or your .c file in our case we asume the file test.c is our project:
-	`#include "leak_hunter.h"`
-• Then add the following line at the start of your main function:
-	`atexit(leak_report);`
+#### • You must include `leak_hunter.h` into your project's header file or your .c file in our case we asume the file test.c is our project:
+	- `#include "leak_hunter.h"`
+#### • Then add the following line at the start of your main function:
+	- `atexit(leak_report);`
 
 Now the test code should look like the code below:
 
