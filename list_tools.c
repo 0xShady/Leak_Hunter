@@ -34,3 +34,24 @@ t_list  *ft_lstnew(void *address, size_t size, size_t line, char *file)
 	new->next = NULL;
 	return (new);
 }
+
+void    delete_node(t_list** head, void *key)
+{
+    t_list *tmp, *prev;
+
+    tmp = *head;
+    if (tmp != NULL && tmp->address == key) {
+        *head = tmp->next;
+        free(tmp->file);
+        free(tmp);
+        return;
+    }
+    while (tmp != NULL && tmp->address != key) {
+        prev = tmp;
+        tmp = tmp->next;
+    }
+    if (tmp == NULL)
+        return;
+    prev->next = tmp->next;
+    free(tmp);
+}
