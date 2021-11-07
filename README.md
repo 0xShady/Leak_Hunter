@@ -16,7 +16,7 @@ int     main()
 	/*some code*/
 	return (0);
 }
-```c
+```
 
 • You must include `leak_hunter.h` into your project's header file or your .c file in our case we asume the file test.c is our project:
 	`#include "leak_hunter.h"`
@@ -67,13 +67,13 @@ In this case we should get the following output on the file `leak.log` (you can 
 
 The log contains
 • summary fo the
-	- Total leaks found.
-	- Total leaks size(bytes).
+	- Total leaks found.\n
+	- Total leaks size(bytes).\n
 • each leak details
-	- Address
-	- Size
-	- File
-	- Line
+	- Address\n
+	- Size\n
+	- File\n
+	- Line\n
 
 • after unallocate the reserved memory using the `free()` function.
 
