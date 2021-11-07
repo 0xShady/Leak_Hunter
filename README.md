@@ -1,11 +1,13 @@
 # Leak_Hunter
 
 ### Efficient yet simple leak detector for your c project
-
+<br />
+<br />
 ## What is a memory leak
 In computer science, a memory leak is a type of resource leak that occurs when a computer program incorrectly manages [memory allocations](https://en.wikipedia.org/wiki/Memory_management#ALLOCATION) in a way that memory which is no longer needed is not released. A memory leak may also happen when an object is stored in memory but cannot be accessed by the running code. A memory leak has symptoms similar to a number of other problems and generally can only be diagnosed by a programmer with access to the program's source code.
 * more about [memory leaks](https://en.wikipedia.org/wiki/Memory_leak)
 ## How to use the leak hunter
+<br />
 #### let's asume we want to track the leaked blocks on the file `test.c`
 
 ```c
@@ -113,6 +115,7 @@ int     main()
 └───────────────────────────────┘
 ```
 Pretty simple, right!
+<br />
 
 ## How it actually works
 
@@ -126,6 +129,7 @@ At the end of the program, we can get the unallocated memory references from the
 
 The line `atexit(leak_report)` registers the `leak_report()` function to be called at the end of the program and this function writes the memory leak summary in to the `leak.log` file. you can also use `#pragma` exit dirctive instead of `atexit()`.
 
+<br />
 ## l3az
 
 Big thanks to [mamali](https://profile.intra.42.fr/users/mamali) & [hfadyl](https://profile.intra.42.fr/users/hfadyl) for all the emotional support
