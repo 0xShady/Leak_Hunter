@@ -4,7 +4,6 @@
 
 ## What is a memory leak
 In computer science, a memory leak is a type of resource leak that occurs when a computer program incorrectly manages [memory allocations](https://en.wikipedia.org/wiki/Memory_management#ALLOCATION) in a way that memory which is no longer needed is not released. A memory leak may also happen when an object is stored in memory but cannot be accessed by the running code. A memory leak has symptoms similar to a number of other problems and generally can only be diagnosed by a programmer with access to the program's source code.
-
 * more about [memory leaks](https://en.wikipedia.org/wiki/Memory_leak)
 ## How to use the leak hunter
 #### let's asume we want to track the leaked blocks on the file `test.c`
@@ -24,9 +23,9 @@ int     main()
 ```
 
 #### • You must include `leak_hunter.h` into your project's header file or your .c file in our case we asume the file test.c is our project:
-	`#include "leak_hunter.h"`
+	``` #include "leak_hunter.h" ```
 #### • Then add the following line at the start of your main function:
-	`atexit(leak_report);`
+	``` atexit(leak_report); ```
 
 * Now the test code should look like the code below:
 
@@ -70,15 +69,15 @@ int     main()
 └───────────────────────────────┘
 ```
 
-The log contains
-• summary fo the
-	* Total leaks found.  
-	* Total leaks size(bytes).  
-• each leak details
-	* Address
-	* Size  
-	* File  
-	* Line  
+The log contains<br />
+* summary fo the<br />
+	* Total leaks found<br />
+	* Total leaks size(bytes)<br />
+* each leak details<br />
+	* Address<br />
+	* Size<br />
+	* File<br />
+	* Line<br />
 
 • after unallocate the reserved memory using the `free()` function.
 
