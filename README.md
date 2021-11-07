@@ -23,9 +23,9 @@ int     main()
 ```
 
 #### • You must include `leak_hunter.h` into your project's header file or your .c file in our case we asume the file test.c is our project:
-	``` #include "leak_hunter.h" ```
+	#include "leak_hunter.h"
 #### • Then add the following line at the start of your main function:
-	``` atexit(leak_report); ```
+	atexit(leak_report);
 
 * Now the test code should look like the code below:
 
@@ -70,18 +70,18 @@ int     main()
 ```
 
 The log contains<br />
-* summary fo the<br />
+* Summary fo the<br />
 	* Total leaks found<br />
 	* Total leaks size(bytes)<br />
-* each leak details<br />
+* Each leak details<br />
 	* Address<br />
 	* Size<br />
 	* File<br />
 	* Line<br />
 
-• after unallocate the reserved memory using the `free()` function.
+### After unallocating the reserved memory using the `free()` function.
 
-``` c
+```c
 #include <stdlib.h>
 #include <stdio.h>
 #include "leak_hunter.h"
@@ -126,7 +126,7 @@ At the end of the program, we can get the unallocated memory references from the
 
 The line `atexit(leak_report)` registers the `leak_report()` function to be called at the end of the program and this function writes the memory leak summary in to the `leak.log` file. you can also use `#pragma` exit dirctive instead of `atexit()`.
 
-#### l3az
+## l3az
 
 Big thanks to [mamali](https://profile.intra.42.fr/users/mamali) & [hfadyl](https://profile.intra.42.fr/users/hfadyl) for all the emotional support
 
