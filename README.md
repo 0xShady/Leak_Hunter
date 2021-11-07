@@ -126,7 +126,7 @@ At the end of the program, we can get the unallocated memory references from the
 
 The line `atexit(leak_report)` registers the `leak_report()` function to be called at the end of the program and this function writes the memory leak summary in to the `leak.log` file. you can also use `#pragma` exit dirctive instead of `atexit()`.
 
-## l3az
+## l3aaaz
 
 Big thanks to [mamali](https://profile.intra.42.fr/users/mamali) & [hfadyl](https://profile.intra.42.fr/users/hfadyl) for all the emotional support
 
