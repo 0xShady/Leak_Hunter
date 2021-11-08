@@ -44,6 +44,9 @@ int     main()
 	return (0);
 }
 ```
+### • Compile all the files (in our case)
+	gcc test.c leak_hunter.c -o test
+	./test
 
 * In this case we should get the following output on the file `leak.log` (you can change the path the name and extension related to the file in `leak_hunter.h line:9`)
 
